@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/viewDirector.js"></script>
+  <script src="js/viewDogs.js"></script>
 </head>
 <body>
 
@@ -39,12 +39,12 @@
     </div>
   </nav>
 
-  <div id="viewDirectorsContainer">
+  <div id="viewDogsContainer">
     <div class="container-fluid">
 
     <div class="row">
       <div class="col-md-12">
-        <h1>View Directors</h1><br/>
+        <h1>View Dogs</h1><br/>
       </div>
     </div>
 
@@ -52,7 +52,7 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-2 col-md-offset-8">
-            <input type="text" class="form-control" id="directorSearch" name="search">
+            <input type="text" class="form-control" id="dogSearch" name="search">
           </div>
           <div class="col-md-2">
             <button type="submit" class="btn btn-default toggleButtonActive">Search</button>
@@ -65,20 +65,11 @@
     <% data.forEach(function(item){ %>
       <div class="col-md-4">
         <div class="panel panel-default">
-<<<<<<< HEAD
-          <div class="panel-body tile directorPanel">
-            <p class="idHolder" style="display:none;"><%= item.username %></p>
+          <div class="panel-body tile dogPanel">
+            <p class="idHolder" style="display:none;"><%= item.id %></p>
             <h2 class="name"><%= item.name %></h2>
-=======
-          <div class="panel-body tile">
-<<<<<<< HEAD
-            <h2 class="name"><%= item.firstName %></h2>
-=======
-            <h2 class="name"><%= item.username %></h2>
->>>>>>> 76e3079ce50f11210776aff944cf948430e3023f
->>>>>>> 782b986b319c0ed2428559039cee488c7176cee0
-            <h4 class="address"><%= item.address %></h4>
-            <h4 class="phone"><%= item.phone %></h4>
+            <h4 class="address"><%= item.age %></h4>
+            <h4 class="phone"><%= item.breed %></h4>
           </div>
         </div>
       </div>

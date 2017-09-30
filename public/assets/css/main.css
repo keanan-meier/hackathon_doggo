@@ -18,8 +18,9 @@ body{
   height: 150px;
   min-width: 300px;
   margin: 0 auto;
-  margin-bottom: 25px;
-
+}
+.tile:hover{
+  background-color: #CFD8DC;
 }
 .name{
   font-weight: bold;
