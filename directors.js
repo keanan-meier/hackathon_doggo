@@ -26,7 +26,4 @@ var directorSchema = new mongoose.Schema({
     required:true,
   }
 });
-
-var Directors = mongoose.model('Directors', directorsSchema);
-
-module.exports = Directors;
+module.exports  = mongoose.model('Director', directorSchema);
