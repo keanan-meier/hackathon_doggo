@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/login.js"></script>
+  <script src="js/viewDogs.js"></script>
 </head>
 <body>
 
@@ -39,44 +39,43 @@
     </div>
   </nav>
 
-  <div id="loginContainer">
+  <div id="viewDogsContainer">
     <div class="container-fluid">
 
-      <div class="row loginForm">
-        <div class="col-xs-6">
-          <button id="fosterToggle" class="toggleButtonActive btn">Foster</button>
-        </div>
-        <div class="col-xs-6">
-          <button id="directorToggle" class="toggleButtonInactive btn">Director</button>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>View Dogs</h1><br/>
+      </div>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-2 col-md-offset-8">
+            <input type="text" class="form-control" id="dogSearch" name="search">
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-default toggleButtonActive">Search</button>
+          </div>
         </div>
       </div>
+    </form>
 
-      <form id="directorLogin" class="loginForm" action="/performDirectorLogin" method="post">
-        <h2><center>Director Sign-in</center></h2>
-        <div class="form-group">
-          <label for="email">Email address:</label>
-          <input type="email" class="form-control" id="email" name="user[email]">
+    <div class="row">
+    <% data.forEach(function(item){ %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body tile dogPanel">
+            <p class="idHolder" style="display:none;"><%= item.id %></p>
+            <h2 class="name"><%= item.name %></h2>
+            <h4 class="address"><%= item.age %></h4>
+            <h4 class="phone"><%= item.breed %></h4>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" name="user[password]">
-        </div>
-        <button type="submit" class="btn btn-default toggleButtonActive logSubmit">Log In</button>
-      </form>
+      </div>
+    <% }); %>
+  </div>
 
-      <form id="fosterLogin" class="loginForm" action="/performFosterLogin" method="post">
-        <h2><center>Foster Sign-in</center></h2>
-        <div class="form-group">
-          <label for="email">Email address:</label>
-          <input type="email" class="form-control" id="email" name="user[email]">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" name="user[password]">
-        </div>
-        <button type="submit" class="btn btn-default toggleButtonActive logSubmit">Log In</button>
-      </form>
-    </div>
   </div>
 
   <div class="footer">

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/viewDirectors.js"></script>
+  <script src="js/viewDirector.js"></script>
 </head>
 <body>
 
@@ -28,6 +28,8 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">Home</a></li>
           <li><a href="/viewdirectors">View Directors</a></li>
+          <li><a href="/viewfosters">View Fosters</a></li>
+          <li><a href="/viewdogs">View Dogs</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -46,7 +48,7 @@
       </div>
     </div>
 
-    <formm>
+    <form>
       <div class="form-group">
         <div class="row">
           <div class="col-md-2 col-md-offset-8">
@@ -63,7 +65,8 @@
     <% data.forEach(function(item){ %>
       <div class="col-md-4">
         <div class="panel panel-default">
-          <div class="panel-body tile">
+          <div class="panel-body tile directorPanel">
+            <p class="idHolder" style="display:none;"><%= item.username %></p>
             <h2 class="name"><%= item.name %></h2>
             <h4 class="address"><%= item.address %></h4>
             <h4 class="phone"><%= item.phone %></h4>
