@@ -11,21 +11,3 @@ $(document).ready(function(){
     link.click();
   });
 });
-$.ajax({
-            type: "POST",
-            url: "/addDirector",
-            data: { fName: fName,
-                    lName: lName,
-                    email: email,
-                    phone:phone,
-                    address:address,
-                    password:password
-             },
-            success: function(data) {
-              this.location.reload(true);
-
-            },
-            error: function(jqXHR, textStatus, err) {
-                alert('text status '+textStatus+', err '+err)
-            }
-        });

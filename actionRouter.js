@@ -54,6 +54,7 @@ var setRoutes = function(app){
   app.post('/postUpdate', function(req,res){
     //new dog
     var newUpdate = {
+<<<<<<< HEAD
       recordType: req.body.body.title,
       date: req.body.body.date,
       updateDesc: req.body.body.desc,
@@ -63,6 +64,18 @@ var setRoutes = function(app){
       if(err) throw err;
     });
     res.redirect('/dog/'+newUpdate.dogID);
+=======
+      name: req.body.name,
+      breed: req.body.breed,
+      age: req.body.age,
+      gender: req.body.gender
+    };
+    connection.query("INSERT INTO dog (`name`,`breed`,`age`,`gender`) VALUES ('" + newDog.name + "', '"
+    + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
+      if(err) throw err;
+    });
+    res.redirect('/viewDogs');
+>>>>>>> parent of a762957... too bad here comes the update down the shit pipe
   });
 };
 

@@ -8,5 +8,6 @@ $(document).ready(function(){
     $('#postEditModal').modal();
   });
 
+  var curDogId = window.location.pathname.indexOf("dog/");
 
 });
