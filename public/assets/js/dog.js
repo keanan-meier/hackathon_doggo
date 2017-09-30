@@ -9,6 +9,10 @@ $(document).ready(function(){
   });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  var curDogId = window.location.pathname.indexOf("dog/");
+>>>>>>> parent of cf916e5... working update
 =======
   var curDogId = window.location.pathname.indexOf("dog/");
 >>>>>>> parent of cf916e5... working update
