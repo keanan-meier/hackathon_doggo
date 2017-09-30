@@ -21,4 +21,8 @@ var directorController = function(operation, data){
       directorService.deleteEntity(data);
       break;
   }
+};
+
+module.exports ={
+  directorController: directorController
 }
