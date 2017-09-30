@@ -8,14 +8,11 @@ module.exports = {
       _db = db;
       console.log('connected to db');
       return callback(err);
+      //db.close();
     });
   },
   getDb:function() {
     console.log('got db!');
     return _db;
-  },
-  closeDb:function() {
-    console.log('db is closed');
-    _db.close();
   }
 };
