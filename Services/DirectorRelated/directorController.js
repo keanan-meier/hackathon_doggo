@@ -23,6 +23,6 @@ var directorController = function(operation, data){
   }
 };
 
-module.exports ={
+module.exports = {
   directorController: directorController
 }

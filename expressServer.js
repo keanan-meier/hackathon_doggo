@@ -14,7 +14,7 @@ var createServer = function() {
 
 var startServer = function() {
   if(!app){
-    console.log('You must create a server first')
+    console.log('You must create a server first');
   }else{
     app.listen(3000);
     console.log('Server started on Port 3000');

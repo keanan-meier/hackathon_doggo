@@ -31,6 +31,33 @@
   margin: 0 auto;
   width: 60%;
   max-width: 500px;
-  background-color: #EEEEEE;
+  background-color: #EEEEEE ;
   padding: 10px;
+}
+
+/*TOGGLE BUTTONS*/
+.toggleButtonActive{
+  padding: none;
+  width: 100%;
+  background-color: #2196F3;
+  color: white !important;
+  border-radius: 0 !important;
+}
+.toggleButtonActive:hover{
+  background-color: #0277BD;
+  color: white;
+}
+.toggleButtonInactive{
+  padding: none;
+  width: 100%;
+  background-color: #BDBDBD;
+  color: white;
+  border-radius: 0 !important;
+}
+.toggleButtonInactive:hover{
+  background-color: #424242;
+  color: white;
+}
+.btn{
+
 }
