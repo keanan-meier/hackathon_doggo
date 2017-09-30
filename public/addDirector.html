@@ -1,50 +1,39 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <title>Add to Database</title>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../css/main.css">
-
 </head>
-
 <body>
-
   <div class="header">
-
   </div>
-
   <div id="loginContainer">
     <div class="container-fluid">
       <div class="addToDB">
-      <form class="loginForm" action="/addDirector">
+      <form class="loginForm" action="/addDirector" method="post">
         <div class="form-group">
           <label for="email">Email address:</label>
-          <input type="email" class="form-control" id="director[email]">
+          <input type="email" class="form-control" id="email" name="director[email]">
         </div>
         <form class="loginForm">
           <div class="form-group">
             <label for="email">Username:</label>
-            <input type="text" class="form-control" id="director[username]">
+            <input type="text" class="form-control" id="username" name="director[username]">
           </div>
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="director[pwd]">
+          <input type="password" class="form-control" id="pwd" name="director[pwd]">
         </div>
         <button type="submit" class="btn btn-default">Add Director</button>
       </form>
     </div>
   </div>
   </div>
-
   <div class="footer">
-
   </div>
-
 </body>
 </html>
