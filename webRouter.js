@@ -19,11 +19,8 @@ var setRoutes = function(app){
   //ADD Director
   app.get('/director/add', function(req,res){
     res.sendFile(__dirname +"/public/addDirector.html");
-  })
+  });
 };
-
-
-
 module.exports = {
   setRoutes: setRoutes
 }
