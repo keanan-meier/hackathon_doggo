@@ -9,7 +9,7 @@ var createServer = function(){
 };
 
 var startServer = function(){
-  server.listen(3000,'192.168.54.226');
+  server.listen(3000,'127.0.0.1');
   console.log('listening on port 3000');
 };
 

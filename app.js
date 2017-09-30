@@ -1,5 +1,9 @@
 const server = require('./server');
+const expressServer = require('./expressServer');
 
-server.createServer();
+expressServer.createServer();
 
-server.startServer();
+expressServer.startServer();
+
+//server.createServer();
+//server.startServer();
