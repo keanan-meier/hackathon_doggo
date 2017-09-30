@@ -36,20 +36,35 @@ var setRoutes = function(app){
   });
 
 
-    app.post('/addDog', function(req,res){
-      //new dog
-      var newDog = {
-        name: req.body.name,
-        breed: req.body.breed,
-        age: req.body.age,
-        gender: req.body.gender
-      };
-      connection.query("INSERT INTO dog (`name`,`breed`,`age`,`gender`) VALUES ('" + newDog.name + "', '"
-      + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
-        if(err) throw err;
-      });
-      res.redirect('/viewDogs');
+  app.post('/addDog', function(req,res){
+    //new dog
+    var newDog = {
+      name: req.body.name,
+      breed: req.body.breed,
+      age: req.body.age,
+      gender: req.body.gender
+    };
+    connection.query("INSERT INTO dog (`name`,`breed`,`age`,`gender`) VALUES ('" + newDog.name + "', '"
+    + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
+      if(err) throw err;
     });
+    res.redirect('/viewDogs');
+  });
+
+  app.post('/postUpdate', function(req,res){
+    //new dog
+    var newUpdate = {
+      name: req.body.name,
+      breed: req.body.breed,
+      age: req.body.age,
+      gender: req.body.gender
+    };
+    connection.query("INSERT INTO dog (`name`,`breed`,`age`,`gender`) VALUES ('" + newDog.name + "', '"
+    + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
+      if(err) throw err;
+    });
+    res.redirect('/viewDogs');
+  });
 };
 
 
