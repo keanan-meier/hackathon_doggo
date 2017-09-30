@@ -146,12 +146,22 @@
           <h4 class="modal-title">Edit Doggo</h4>
         </div>
         <div class="modal-body">
-          <form action="/editDog" method="POST">
+          <form action="/editDoggo" method="POST">
                   <div class="form-group">
                     <h2><center>Enter the fields below to edit this dog</center></h2>
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name">
-                  </div>
+                      <label for="name">Name:</label>
+                      <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                      <div class="form-group">
+                        <label for="breed">Breed:</label>
+                        <input type="text" class="form-control" id="breed" name="breed">
+                      </div>
+                    <div class="form-group">
+                      <div class="col-2">
+                      <label for="age">Age:</label>
+                      <input type="number" class="form-control" id="age" name="age">
+                    </div>
+                    </div>
                     <div class="form-group">
                       <label for="breed">Breed:</label>
                       <input type="text" class="form-control" id="breed" name="breed">
