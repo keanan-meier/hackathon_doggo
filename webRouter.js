@@ -17,18 +17,12 @@ var setRoutes = function(app){
   app.get('/login', function(req, res){
     res.render('login');
   });
-
-<<<<<<< HEAD
 // var directors = [ director={name:"Bill",phone:"(306)737-0749", address:"123 Fake St."},
 //                 director={name:"Ted",phone:"(306)737-0749", address:"123 Fake St."},
 //                 director={name:"Frank",phone:"(306)737-0749", address:"123 Fake St."},
 //                 director={name:"Kate",phone:"(306)737-0749", address:"123 Fake St."}
 //               ]
 
-  //VIEW DIRECTORS
-  app.get('/viewdirectors', function(req, res){
-      connection.query('SELECT * FROM director', function(err,data){
-=======
   //place holder data
   var directors = [ director={username:"billiyboy",name:"Bill",phone:"(306)737-0749", address:"123 Fake St."},
                   director={username:"test84923",name:"Ted",phone:"(306)737-0749", address:"123 Fake St."},
@@ -62,7 +56,6 @@ var setRoutes = function(app){
   //VIEW DIRECTORS
   app.get('/viewdirectors', function(req, res){
       connection.query('SELECT * FROM directors', function(err,data){
->>>>>>> 782b986b319c0ed2428559039cee488c7176cee0
         if(err){
           throw err;
         } else {
