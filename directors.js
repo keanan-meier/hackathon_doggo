@@ -2,7 +2,6 @@
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://doggoadmin:doggo@ds155674.mlab.com:55674/ccrezqs');
-
 //director schema
 var directorSchema = new mongoose.Schema({
   email: {

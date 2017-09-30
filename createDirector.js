@@ -7,9 +7,9 @@ var url = 'mongodb://doggoadmin:doggo@ds155674.mlab.com:55674/ccrezqs';
 //hardcoded insert document (record) into collection (table)
 var insertDocument = function(db,callback) {
   db.collection('directors').insertOne({
-    "email": "teamrocket4ever@gmail.com",
-    "username": "meowth",
-    "password": "guest"
+    // "email": "teamrocket4ever@gmail.com",
+    // "username": "meowth",
+    // "password": "guest"
   }, function(err, result) {
     assert.equal(err,null);
     console.log('inserted a document into the directors collection');
@@ -44,32 +44,32 @@ MongoClient.connect(url, function(err,db) {
   });
 });
 
-//update section
-// var updateDirectors = function(db,callback) {
-//   db.collection('directors').updateOne(
-//     //find document entry
-//     //error handling needed if director not found
-//     //updating embedded documents, use dot notation
-//       //i.e. director.address.street
-//     {"username":"testDirector"},
-//     {
-//       //set new params
-//       $set: {"email": "hannah.kopytko@hotmail.com"},
-//       $currentDate: {"lastModifed": true}
-//     }, function (err,results) {
-//       console.log('update complete');
-//       callback();
-//     });
-// };
-//
-// //connect and update!
-// MongoClient.connect(url,function(err,db) {
-//   assert.equal(null,err);
-//
-//   updateDirectors(db, function() {
-//     db.close();
-//   });
-// });
+update section
+var updateDirectors = function(db,callback) {
+  db.collection('directors').updateOne(
+    //find document entry
+    //error handling needed if director not found
+    //updating embedded documents, use dot notation
+      //i.e. director.address.street
+    {"username":"testDirector"},
+    {
+      //set new params
+      $set: {"email": "hannah.kopytko@hotmail.com"},
+      $currentDate: {"lastModifed": true}
+    }, function (err,results) {
+      console.log('update complete');
+      callback();
+    });
+};
+
+//connect and update!
+MongoClient.connect(url,function(err,db) {
+  assert.equal(null,err);
+
+  updateDirectors(db, function() {
+    db.close();
+  });
+});
 
 //remove document from collection
 var removeDirector = function(db,callback) {
