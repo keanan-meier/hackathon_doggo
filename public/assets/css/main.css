@@ -4,10 +4,25 @@
   width:100%;
 }
 
-body{
+html{
+  height: 100%;
+}
+
+html body{
   background-color:#F5F5F5;
   font-family: helvetica;
   height: 100%;
+}
+
+html #bckFix{
+  background-color:#F5F5F5!important;
+  font-family: helvetica;
+  height: 100%;
+}
+
+.pageHeading{
+  font-weight: bold;
+  padding-left: 15px;
 }
 
 /*TILES*/
