@@ -7,4 +7,7 @@ $(document).ready(function(){
   $("#postEdit").click(function(e){
     $('#postEditModal').modal();
   });
+
+  var curDogId = window.location.pathname.indexOf("dog/");
+
 });
