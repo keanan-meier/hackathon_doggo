@@ -52,6 +52,24 @@ var setRoutes = function(app){
       });
   });
 
+  //INDV DOG
+  app.get('/dog/:dogID', function(req, res){
+    console.log(req.params.dogID);
+    res.render('dog');
+  });
+
+  //INDV FOSTER
+  app.get('/foster/:fosterID', function(req, res){
+    console.log(req.params.fosterID);
+    res.render('foster');
+  });
+
+  //INDV DIRECTOR
+  app.get('/director/:directorID', function(req, res){
+    console.log(req.params.directorID);
+    res.render('director');
+  });
+
   //ADD Director
   app.get('/add', function(req,res){
     res.render('addDirector');
