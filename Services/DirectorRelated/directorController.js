@@ -21,6 +21,7 @@ var directorController = function(operation, data){
       directorService.deleteEntity(db,data);
       break;
   }
+  db = dbUtil.closeDb();
 };
 
 module.exports = {

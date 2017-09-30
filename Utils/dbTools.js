@@ -14,7 +14,8 @@ module.exports = {
     console.log('got db!');
     return _db;
   },
-  closeDb:function {
+  closeDb:function() {
+    console.log('db is closed');
     _db.close();
   }
 };
