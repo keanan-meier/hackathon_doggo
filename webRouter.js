@@ -37,12 +37,6 @@ var setRoutes = function(app){
                   dog={id:"4004", name:"Jack",age:"8", breed:"Black Lab"}
               ];
 
-  //VIEW DIRECTORS
-  app.get('/viewdirectors', function(req, res){
-<<<<<<< HEAD
-    res.render('viewDirectors', {data: directors});
-  });
-
   //VIEW FOSTERS
   app.get('/viewfosters', function(req, res){
     res.render('viewFosters', {data: fosters});
@@ -53,7 +47,9 @@ var setRoutes = function(app){
     res.render('viewDogs', {data: dogs});
   });
 
-=======
+
+  //VIEW DIRECTORS
+  app.get('/viewdirectors', function(req, res){
       connection.query('SELECT * FROM directors', function(err,data){
         if(err){
           throw err;
@@ -62,8 +58,8 @@ var setRoutes = function(app){
         }
       });
     //res.render('viewDirectors', {data: directors});
-});
->>>>>>> 76e3079ce50f11210776aff944cf948430e3023f
+  });
+
   //ADD Director
   app.get('/add', function(req,res){
     res.render('addDirector');
