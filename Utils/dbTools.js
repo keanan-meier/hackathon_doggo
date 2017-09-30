@@ -13,7 +13,7 @@ dbConnection.connect((err)=>{
   if(err){
     throw err;
   }
-  console.log('c  onnected to db...');
+  console.log('connected to db...');
 });
 module.exports = {
   dbConnection: dbConnection

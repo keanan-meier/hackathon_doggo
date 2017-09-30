@@ -18,15 +18,15 @@ var setRoutes = function(app){
     res.render('login');
   });
 
-var directors = [ director={name:"Bill",phone:"(306)737-0749", address:"123 Fake St."},
-                director={name:"Ted",phone:"(306)737-0749", address:"123 Fake St."},
-                director={name:"Frank",phone:"(306)737-0749", address:"123 Fake St."},
-                director={name:"Kate",phone:"(306)737-0749", address:"123 Fake St."}
-              ]
+// var directors = [ director={name:"Bill",phone:"(306)737-0749", address:"123 Fake St."},
+//                 director={name:"Ted",phone:"(306)737-0749", address:"123 Fake St."},
+//                 director={name:"Frank",phone:"(306)737-0749", address:"123 Fake St."},
+//                 director={name:"Kate",phone:"(306)737-0749", address:"123 Fake St."}
+//               ]
 
   //VIEW DIRECTORS
   app.get('/viewdirectors', function(req, res){
-      connection.query('SELECT * FROM directors', function(err,data){
+      connection.query('SELECT * FROM director', function(err,data){
         if(err){
           throw err;
         } else {
