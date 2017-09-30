@@ -9,16 +9,22 @@ var setRoutes = function(app){
 
   //HOME
   app.get('/', function(req, res){
-    res.sendFile(__dirname + "/public/index.html");
+    res.render('home');
   });
 
   //LOGIN
   app.get('/login', function(req, res){
-    res.sendFile(__dirname +"/public/login.html");
+    res.render('login');
   });
+
+  //VIEW DIRECTORS
+  app.get('/viewdirectors', function(req, res){
+    res.render('viewDirectors');
+  });
+
   //ADD Director
   app.get('/add', function(req,res){
-    res.sendFile(__dirname + "/public/addDirector.html");
+    res.render('addDirector');
   });
 };
 module.exports = {

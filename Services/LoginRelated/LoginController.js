@@ -1,16 +1,16 @@
-var logonService = require("./logonService");
+var loginService = require("./loginService");
 
 var loginController = function(operation, data){
 
   //perform operation
-  switch(operation){}
+  switch(operation){
     case "director":
       console.log("Director logon starting");
-      logonService.createEntity(data);
+      loginService.isDirector(data);
       break;
     case "foster":
       console.log("Foster logon starting");
-      logonService.readEntity(data);
+      loginService.isFoster(data);
       break;
   }
 };

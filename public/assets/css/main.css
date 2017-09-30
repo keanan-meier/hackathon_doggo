@@ -1,22 +1,38 @@
 /*COMMON*/
-.header{
-  background-color: #0277BD;
-  width: 100%;
-  height: 50px;
-  top: 0 px;
-}
 .footer{
   background-color: #212121;
-  width: 100%;
-  height: 35px;
-  position: absolute;
-  bottom: 0px;
+  width:100%;
 }
-.container-fluid{
-  padding-top: 25px;
-}
+
 body{
-  background-color:#EEEEEE;
+  background-color:#F5F5F5;
+  font-family: helvetica;
+  height: 100%;
+}
+
+/*TILES*/
+.tile{
+  background-color:#fff;
+  padding: 20px;
+  width: 100%;
+  height: 150px;
+  min-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+
+}
+.name{
+  font-weight: bold;
+}
+.phone{
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+}
+.address{
+  position: absolute;
+  left: 30px;
+  bottom: 25px;
 }
 
 /*HOME PAGE*/
@@ -27,13 +43,18 @@ body{
   width: 60%;
   max-width: 450px;
   background-color: #fff;
-  padding: 10px;
+  padding: 20px;
+  padding-top: 25px;
 }
 @media screen and (max-width: 600px) {
     .loginForm {
         width: 90%;
         max-width: none;
     }
+}
+.logSubmit{
+  margin-top:25px;
+  margin-bottom: 25px;
 }
 /*RE-USE SNIPPETS*/
 .addToDB{

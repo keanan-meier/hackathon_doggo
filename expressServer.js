@@ -5,6 +5,9 @@ var app;
 
 var createServer = function() {
     app = express();
+
+    app.set('view engine', 'ejs');
+
     console.log('Server created');
     webRouter.setRoutes(app);
     console.log('WebRoutes set');

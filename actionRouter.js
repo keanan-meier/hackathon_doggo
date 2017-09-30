@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser =require('body-parser');
 var dc = require('./Services/DirectorRelated/directorController');
+var lc = require('./Services/LoginRelated/loginController');
 
 var setRoutes = function(app){
   //ADD ACTION ROUTES HERE (POST)
@@ -16,12 +17,17 @@ var setRoutes = function(app){
 
   //LOGIN
   app.post('/performDirectorLogin', function(req, res) {
-    console.log(req.body.user);
+    lc.loginController('director', req.body.user);
   });
-//ADD DIRECTOR
-app.post('/addDirector', function(req,res){
-  dc.directorController('create',req.body.director);
-});
+
+  app.post('/performFosterLogin', function(req, res) {
+    lc.loginController('foster', req.body.user);
+  });
+
+  //ADD DIRECTOR
+  app.post('/addDirector', function(req,res){
+    dc.directorController('create',req.body.director);
+  });
 };
 
 module.exports = {
