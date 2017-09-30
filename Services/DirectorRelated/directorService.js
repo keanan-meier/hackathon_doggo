@@ -90,3 +90,10 @@ MongoClient.connect(url,function(err,db){
     db.close();
   });
 });
+
+module.exports = {
+  createEntity: createEntity,
+  readEntity: readEntity,
+  updateEntity: updateEntity,
+  deleteEntity: deleteEntity
+}
