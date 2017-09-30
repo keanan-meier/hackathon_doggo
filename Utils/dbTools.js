@@ -1,18 +1,20 @@
-//connection
-var MongoClient = require('mongodb').MongoClient;
-var _db;
+var express = require('express');
+var mysql = require('mysql');
+var app = express();
 
-module.exports = {
-  openConnection: function(callback) {
-    MongoClient.connect("mongodb://doggoadmin:doggo@ds155674.mlab.com:55674/ccrezqs", function(err,db){
-      _db = db;
-      console.log('connected to db');
-      return callback(err);
-      //db.close();
-    });
-  },
-  getDb:function() {
-    console.log('got db!');
-    return _db;
+var dbConnection = mysql.createConnection({
+  host:'127.0.0.1',
+  user:'root',
+  password: '',
+  database: 'ccrezqs'
+});
+
+dbConnection.connect((err)=>{
+  if(err){
+    throw err;
   }
-};
+  console.log('c  onnected to db...');
+});
+module.exports = {
+  dbConnection: dbConnection
+}

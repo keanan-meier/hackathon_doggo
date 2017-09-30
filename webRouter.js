@@ -1,7 +1,8 @@
 var express = require('express');
+var dbTools = require('./Utils/dbTools');
+var connection = dbTools.dbConnection;
 
 var setRoutes = function(app){
-
   //SET STATIC for js/css/imgs
   app.use(express.static("public/assets/"));
 
@@ -38,6 +39,7 @@ var setRoutes = function(app){
 
   //VIEW DIRECTORS
   app.get('/viewdirectors', function(req, res){
+<<<<<<< HEAD
     res.render('viewDirectors', {data: directors});
   });
 
@@ -51,6 +53,17 @@ var setRoutes = function(app){
     res.render('viewDogs', {data: dogs});
   });
 
+=======
+      connection.query('SELECT * FROM directors', function(err,data){
+        if(err){
+          throw err;
+        } else {
+          res.render('viewDirectors',{data: data});
+        }
+      });
+    //res.render('viewDirectors', {data: directors});
+});
+>>>>>>> 76e3079ce50f11210776aff944cf948430e3023f
   //ADD Director
   app.get('/add', function(req,res){
     res.render('addDirector');
