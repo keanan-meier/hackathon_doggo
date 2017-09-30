@@ -55,7 +55,7 @@ var setRoutes = function(app){
 
   //VIEW DIRECTORS
   app.get('/viewdirectors', function(req, res){
-      connection.query('SELECT * FROM directors', function(err,data){
+      connection.query('SELECT * FROM director', function(err,data){
         if(err){
           throw err;
         } else {
@@ -63,6 +63,24 @@ var setRoutes = function(app){
         }
       });
     //res.render('viewDirectors', {data: directors});
+  });
+
+  //INDV DOG
+  app.get('/dog/:dogID', function(req, res){
+    console.log(req.params.dogID);
+    res.render('dog');
+  });
+
+  //INDV FOSTER
+  app.get('/foster/:fosterID', function(req, res){
+    console.log(req.params.fosterID);
+    res.render('foster');
+  });
+
+  //INDV DIRECTOR
+  app.get('/director/:directorID', function(req, res){
+    console.log(req.params.directorID);
+    res.render('director');
   });
 
   //ADD Director

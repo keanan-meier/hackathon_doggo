@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/viewDirector.js"></script>
+  <script src="js/viewDogs.js"></script>
 </head>
 <body>
 
@@ -39,44 +39,16 @@
     </div>
   </nav>
 
-  <div id="viewDirectorsContainer">
+  <div id="viewDogContainer">
     <div class="container-fluid">
 
     <div class="row">
       <div class="col-md-12">
-        <h1>View Directors</h1><br/>
+          <h1>Dog</h1><br/>
       </div>
     </div>
 
-    <form>
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-2 col-md-offset-8">
-            <input type="text" class="form-control" id="directorSearch" name="search">
-          </div>
-          <div class="col-md-2">
-            <button type="submit" class="btn btn-default toggleButtonActive">Search</button>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <div class="row">
-    <% data.forEach(function(item){ %>
-      <div class="col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-body tile directorPanel">
-            <p class="idHolder" style="display:none;"><%= item.username %></p>
-            <h2 class="name"><%= item.firstName %></h2>
-            <h2 class="name"><%= item.firstname %></h2>
-            <h4 class="address"><%= item.address %></h4>
-            <h4 class="phone"><%= item.phone %></h4>
-          </div>
-        </div>
-      </div>
-    <% }); %>
-  </div>
-
+    </div>
   </div>
 
   <div class="footer">
