@@ -5,6 +5,8 @@ var setRoutes = function(app){
   //SET STATIC for js/css/imgs
   app.use(express.static("public/assets/"));
 
+  //ADD WEBROUTES HERE (GET)
+
   //HOME
   app.get('/', function(req, res){
     res.sendFile(__dirname +"/public/index.html");

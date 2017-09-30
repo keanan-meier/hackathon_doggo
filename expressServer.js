@@ -1,12 +1,15 @@
 var express = require('express');
-var router = require('./router');
+var webRouter = require('./webRouter');
+var actionRouter = require('./actionRouter');
 var app;
 
 var createServer = function() {
     app = express();
     console.log('Server created');
-    router.setRoutes(app);
-    console.log('Routes set');
+    webRouter.setRoutes(app);
+    console.log('WebRoutes set');
+    actionRouter.setRoutes(app);
+    console.log('ActionRoutes set');
 };
 
 var startServer = function() {

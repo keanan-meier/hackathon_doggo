@@ -1,3 +1,0 @@
-function clickFunction() {
-  alert('Yay');
-}
