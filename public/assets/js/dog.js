@@ -8,9 +8,5 @@ $(document).ready(function(){
     $('#postEditModal').modal();
   });
 
-<<<<<<< HEAD
-=======
-  var curDogId = window.location.pathname.indexOf("dog/");
->>>>>>> parent of cf916e5... working update
 
 });

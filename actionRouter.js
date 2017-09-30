@@ -54,16 +54,15 @@ var setRoutes = function(app){
   app.post('/postUpdate', function(req,res){
     //new dog
     var newUpdate = {
-      name: req.body.name,
-      breed: req.body.breed,
-      age: req.body.age,
-      gender: req.body.gender
+      recordType: req.body.body.title,
+      date: req.body.body.date,
+      updateDesc: req.body.body.desc,
+      dogID: req.body.body.dogID
     };
-    connection.query("INSERT INTO dog (`name`,`breed`,`age`,`gender`) VALUES ('" + newDog.name + "', '"
-    + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
+    connection.query("INSERT INTO dog_requests (`recordType`,`date`,`updateDesc`,`dogID`) VALUES (?,?,?,?);",[newUpdate.recordType, newUpdate.date, newUpdate.updateDesc,newUpdate.dogID],function(err,result){
       if(err) throw err;
     });
-    res.redirect('/viewDogs');
+    res.redirect('/dog/'+newUpdate.dogID);
   });
 };
 
