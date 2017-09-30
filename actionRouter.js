@@ -17,7 +17,10 @@ var setRoutes = function(app){
   app.post('/performLogin', function(req, res) {
     console.log(req.body.user);
   });
-
+//ADD DIRECTOR
+app.post('/addDirector', function(req,res){
+  console.log(req.body.director);
+});
 };
 
 
