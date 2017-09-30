@@ -9,10 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/viewDogs.js"></script>
+  <script src="../js/dog.js"></script>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
-<body>
+<body id="bckFix" style="background-color:#F5F5F5">
 
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
@@ -44,12 +44,95 @@
 
     <div class="row">
       <div class="col-md-12">
-          <h1>Dog</h1><br/>
+          <h1 class="pageHeading"><%= data.dog.name %></h1><br/>
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <img src="https://i.imgur.com/CgSj6pu.jpg" style="width:55%; margin:0 auto; display:block; border-radius: 50%;">
+              <center>
+              <h1> About: </h1>
+              <h4>Breed: <%= data.dog.breed %> </h4>
+              <h4>Age: <%= data.dog.age %> years </h4>
+              <h4>Gender: <%= data.dog.gender %> </h4>
+              <h4>Foster Owner: <%= data.dog.foster %> </h4>
+              <div class="col-md-12">
+                <button type="button" id="postEdit" class="btn btn-default toggleButtonActive logSubmit">Edit <%= data.dog.name %> </button>
+              </div>
+              </center>
+          </div>
+        </div>
+      </div>
+
+        <div class="col-md-6" style="max-height:79vh; overflow-y:auto;">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row">
+                  <div class="col-md-6">
+                    <h1><center>Updates</center></h1>
+                  </div>
+
+                  <div class="col-md-6">
+                    <button type="button" id="postUpdate" class="btn btn-default toggleButtonActive logSubmit">New Post</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+
+          <% data.updates.forEach(function(item){ %>
+          <div class="panel panel-default">
+            <div class="panel-body">
+                <h3> <%= item.type %>: </h3>
+                <h4>Date: <%= item.date %> </h4>
+                <h4>Details: <%= item.desc %> </h4>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fadeloginForm" id="postUpdateModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Post an update</h4>
+        </div>
+        <div class="modal-body">
+          <form id="dogUpdate" action="/postUpdate" method="post">
+            <h2><center>Enter the fields below to post an update.</center></h2>
+            <div class="form-group">
+              <label for="update[title]">Title:</label>
+              <input type="text" class="form-control" id="title" name="update[title]">
+            </div>
+            <div class="form-group">
+              <label for="update[date]">Date:</label>
+              <input type="date" class="form-control" id="date" name="update[date]">
+            </div>
+            <div class="form-group">
+              <label for="update[desc]">Description::</label>
+              <textarea class="form-control" id="desc" name="update[desc]"></textarea>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="submitUpdate" class="btn btn-default toggleButtonActive logSubmit">Post Update</button>
+        </div>
+      </div>
+
     </div>
   </div>
+
 
   <div class="footer">
 
