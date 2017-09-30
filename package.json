@@ -1,0 +1,23 @@
+{
+  "name": "hackathon_doggo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keanan-meier/hackathon_doggo.git"
+  },
+  "author": "KeananMeier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keanan-meier/hackathon_doggo/issues"
+  },
+  "homepage": "https://github.com/keanan-meier/hackathon_doggo#readme",
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
