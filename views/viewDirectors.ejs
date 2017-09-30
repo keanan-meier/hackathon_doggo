@@ -59,18 +59,20 @@
       </div>
     </form>
 
-      <div class="row">
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-body tile">
-              <h2 class="name">Pepe Roni</h2>
-              <h4 class="address">1583 Regent St.</h4>
-              <h4 class="phone">(306)737-0749</h4>
-            </div>
+    <div class="row">
+    <% data.forEach(function(item){ %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body tile">
+            <h2 class="name"><%= item.name %></h2>
+            <h4 class="address"><%= item.address %></h4>
+            <h4 class="phone"><%= item.phone %></h4>
           </div>
         </div>
+      </div>
+    <% }); %>
+  </div>
 
-    </div>
   </div>
 
   <div class="footer">
