@@ -17,7 +17,11 @@ var setRoutes = function(app){
     res.sendFile(__dirname +"/public/login.html");
   });
   //ADD Director
+<<<<<<< HEAD
   app.get('director/add', function(req,res){
+=======
+  app.get('/add', function(req,res){
+>>>>>>> b58b66c9165b1f3e50f6c661cb1f76b1c9459d94
     res.sendFile(__dirname + "/public/addDirector.html");
   });
 };
