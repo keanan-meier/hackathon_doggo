@@ -112,22 +112,22 @@
           <form id="dogUpdate" action="/postUpdate" method="post">
             <h2><center>Enter the fields below to post an update.</center></h2>
             <div class="form-group">
-              <label for="update[title]">Title:</label>
-              <input type="text" class="form-control" id="title" name="update[title]">
+              <label for="title">Title:</label>
+              <input type="text" class="form-control" id="title" name="title">
             </div>
             <div class="form-group">
-              <label for="update[date]">Date:</label>
-              <input type="date" class="form-control" id="date" name="update[date]">
+              <label for="date">Date:</label>
+              <input type="date" class="form-control" id="updateDate" name="date">
             </div>
             <div class="form-group">
-              <label for="update[desc]">Description::</label>
-              <textarea class="form-control" id="desc" name="update[desc]"></textarea>
+              <label for="desc">Description::</label>
+              <textarea class="form-control" id="desc" name="desc"></textarea>
             </div>
 
           </form>
         </div>
         <div class="modal-footer">
-          <button type="submit" id="submitUpdate" class="btn btn-default toggleButtonActive logSubmit">Post Update</button>
+          <button type="button" id="submitUpdate" class="btn btn-default toggleButtonActive logSubmit">Post Update</button>
         </div>
       </div>
 
@@ -148,21 +148,7 @@
         <div class="modal-body">
           <form action="/editDoggo" method="POST">
                   <div class="form-group">
-                    <h2><center>Enter the fields below to edit this dog</center></h2>
-                      <label for="name">Name:</label>
-                      <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                      <div class="form-group">
-                        <label for="breed">Breed:</label>
-                        <input type="text" class="form-control" id="breed" name="breed">
-                      </div>
-                    <div class="form-group">
-                      <div class="col-2">
-                      <label for="age">Age:</label>
-                      <input type="number" class="form-control" id="age" name="age">
-                    </div>
-                    </div>
-                    <div class="form-group">
+                    <h2><center>Enter the fields below to edit this dog</center></h2>                    <div class="form-group">
                       <label for="breed">Breed:</label>
                       <input type="text" class="form-control" id="breed" name="breed">
                     </div>
