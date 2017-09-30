@@ -134,44 +134,49 @@
     </div>
   </div>
 
-  <!--add doggo modal-->
-  <div id="postEditModal" class="modal fade" role="dialog">
+
+  <!-- Modal -->
+  <div class="modal fadeloginForm" id="postEditModal" role="dialog">
     <div class="modal-dialog">
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Doggo</h4>
         </div>
-          <div class="modal-body">
-            <form action="/addDog" method="POST">
+        <div class="modal-body">
+          <form action="/editDog" method="POST">
+                  <div class="form-group">
+                    <h2><center>Enter the fields below to edit this dog</center></h2>
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                  </div>
                     <div class="form-group">
-                      <label for="name">Name:</label>
-                      <input type="text" class="form-control" id="name" name="name">
+                      <label for="breed">Breed:</label>
+                      <input type="text" class="form-control" id="breed" name="breed">
                     </div>
-                      <div class="form-group">
-                        <label for="breed">Breed:</label>
-                        <input type="text" class="form-control" id="breed" name="breed">
-                      </div>
-                    <div class="form-group">
-                      <div class="col-2">
-                      <label for="age">Age:</label>
-                      <input type="number" class="form-control" id="age" name="age">
-                    </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="gender">Gender:</label><br/>
-                      <input type="radio" name="gender" value="male"> Male<br>
-                      <input type="radio" name="gender" value="female"> Female<br>
-                    </div>
-            </form>
-          </div>
-          <div class="modal-footer">
+                  <div class="form-group">
+                    <div class="col-2">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" id="age" name="age">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="gender">Gender:</label><br/>
+                    <input type="radio" name="gender" value="male"> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                  </div>
+          </form>
+        </div>
+        <div class="modal-footer">
             <button type="submit" id="submitEdit" class="btn btn-default toggleButtonActive logSubmit">Submit Edit</button>
         </div>
       </div>
+
     </div>
-</div>
+  </div>
+
 
   <div class="footer">
 
