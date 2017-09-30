@@ -4,22 +4,29 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://doggoadmin:doggo@ds155674.mlab.com:55674/ccrezqs');
 
 //director schema
-var directorsSchema = new mongoose.Schema({
-  username: String,
-  password: String,
-  firstName: String,
-  lastName: String,
-  email:String
+var directorSchema = new mongoose.Schema({
+  email: {
+    type:String,
+    unique:true,
+    required:true,
+    trim:true,
+  },
+  username: {
+    type:String,
+    unique:true,
+    required:true,
+    trim:true,
+  },
+  password: {
+    type:String,
+    required:true,
+  },
+  passwordConf: {
+    type:String,
+    required:true,
+  }
 });
 
 var Directors = mongoose.model('Directors', directorsSchema);
 
-var directorOne = Directors({
-  username: 'testDirector',
-  password:'test',
-  firstName: 'Test',
-  lastName: 'Doggo'
-}).save(function(err){
-  if (err) throw err;
-  console.log('director saved');
-});
+module.exports = Directors;
