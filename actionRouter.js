@@ -14,13 +14,17 @@ var setRoutes = function(app){
   app.use(bodyParser.json());
 
   //LOGIN
-  app.post('/performLogin', function(req, res) {
+  app.post('/performDirectorLogin', function(req, res) {
     console.log(req.body.user);
   });
-//ADD DIRECTOR
-app.post('/addDirector', function(req,res){
-  console.log(req.body.director);
-});
+  app.post('/performFosterLogin', function(req, res) {
+    console.log(req.body.user);
+  });
+
+  //ADD DIRECTOR
+  app.post('/addDirector', function(req,res){
+    console.log(req.body.director);
+  });
 };
 
 
