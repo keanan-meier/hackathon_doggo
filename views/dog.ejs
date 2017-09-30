@@ -137,22 +137,25 @@
           <form id="dogUpdate" action="/postUpdate" method="post">
             <h2><center>Enter the fields below to post an update.</center></h2>
             <div class="form-group">
-              <label for="title">Title:</label>
-              <input type="text" class="form-control" id="title" name="title">
+              <label for="update[title]">Title:</label>
+              <input type="text" class="form-control" id="title" name="update[title]">
             </div>
             <div class="form-group">
-              <label for="date">Date:</label>
-              <input type="date" class="form-control" id="updateDate" name="date">
+              <label for="update[date]">Date:</label>
+              <input type="date" class="form-control" id="date" name="update[date]">
             </div>
             <div class="form-group">
-              <label for="desc">Description::</label>
-              <textarea class="form-control" id="desc" name="desc"></textarea>
+              <label for="update[desc]">Description::</label>
+              <textarea class="form-control" id="desc" name="update[desc]"></textarea>
             </div>
+
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" id="submitUpdate" class="btn btn-default toggleButtonActive logSubmit">Post Update</button>
+          <button type="submit" id="submitUpdate" class="btn btn-default toggleButtonActive logSubmit">Post Update</button>
         </div>
+      </div>
+
     </div>
   </div>
 
