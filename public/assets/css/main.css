@@ -26,3 +26,11 @@
   background-color: #EEEEEE;
   padding: 10px;
 }
+/*RE-USE SNIPPETS*/
+.addToDB{
+  margin: 0 auto;
+  width: 60%;
+  max-width: 500px;
+  background-color: #EEEEEE;
+  padding: 10px;
+}

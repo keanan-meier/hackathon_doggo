@@ -16,9 +16,11 @@ var setRoutes = function(app){
   app.get('/login', function(req, res){
     res.sendFile(__dirname +"/public/login.html");
   });
+  //ADD Director
+  app.get('director/add', function(req,res){
+    res.sendFile(__dirname +"/public/addDirector.html");
+  });
 };
-
-
 module.exports = {
   setRoutes: setRoutes
 }
