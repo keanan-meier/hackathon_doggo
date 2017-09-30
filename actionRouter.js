@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser =require('body-parser');
 var dc = require('./Services/DirectorRelated/directorController');
 var lc = require('./Services/LoginRelated/loginController');
+var dbTools = require('./Utils/dbTools');
+var connection = dbTools.dbConnection;
 
 //var dbUtil = require('./Utils/dbTools');
 var setRoutes = function(app){
@@ -32,7 +34,24 @@ var setRoutes = function(app){
   app.post('/addDirector', function(req,res){
     dc.directorController('create',req.body.director);
   });
+
+
+    app.post('/addDog', function(req,res){
+      //new dog
+      var newDog = {
+        name: req.body.name,
+        breed: req.body.breed,
+        age: req.body.age,
+        gender: req.body.gender
+      };
+      connection.query("INSERT INTO dog (`name`,`breed`,`age`,`gender`) VALUES ('" + newDog.name + "', '"
+      + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
+        if(err) throw err;
+      });
+      res.send();
+    });
 };
+
 
 module.exports = {
   setRoutes: setRoutes

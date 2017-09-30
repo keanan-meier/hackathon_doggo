@@ -17,6 +17,7 @@ var setRoutes = function(app){
   app.get('/login', function(req, res){
     res.render('login');
   });
+<<<<<<< HEAD
 // var directors = [ director={name:"Bill",phone:"(306)737-0749", address:"123 Fake St."},
 //                 director={name:"Ted",phone:"(306)737-0749", address:"123 Fake St."},
 //                 director={name:"Frank",phone:"(306)737-0749", address:"123 Fake St."},
@@ -54,15 +55,29 @@ var updatesData = [update={type:"Medical Update", date:"9/30/2017", desc:"Meatba
 
 var dogdata={dog:dogs[1] ,updates:updatesData};
 
+=======
+>>>>>>> 44691927950d4e98b2987733a22273c4ab222514
 
   //VIEW FOSTERS
   app.get('/viewfosters', function(req, res){
-    res.render('viewFosters', {data: fosters});
+    connection.query('SELECT * FROM foster', function(err,data){
+      if(err){
+        throw err;
+      } else {
+        res.render('viewFosters',{data: data});
+      }
+    });
   });
 
   //VIEW DOGS
   app.get('/viewdogs', function(req, res){
-    res.render('viewDogs', {data: dogs});
+    connection.query('SELECT * FROM dog', function(err,data){
+      if(err){
+        throw err;
+      } else {
+        res.render('viewDogs',{data: data});
+      }
+    });
   });
 
 
@@ -75,7 +90,6 @@ var dogdata={dog:dogs[1] ,updates:updatesData};
           res.render('viewDirectors',{data: data});
         }
       });
-    //res.render('viewDirectors', {data: directors});
   });
 
   //INDV DOG
