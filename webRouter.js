@@ -17,7 +17,6 @@ var setRoutes = function(app){
   app.get('/login', function(req, res){
     res.render('login');
   });
-<<<<<<< HEAD
 // var directors = [ director={name:"Bill",phone:"(306)737-0749", address:"123 Fake St."},
 //                 director={name:"Ted",phone:"(306)737-0749", address:"123 Fake St."},
 //                 director={name:"Frank",phone:"(306)737-0749", address:"123 Fake St."},
@@ -37,26 +36,24 @@ var setRoutes = function(app){
   //                 foster={username:"lauren8932",name:"Lauren",phone:"(306)737-0749", address:"123 Fake St."}
   //               ];
 
-var dogs = [dog={id:"1001", name:"Toby",age:"2", breed:"Cockapoo"},
-                dog={id:"2002", gender:"Man", foster:"Homeless", name:"Meatball",age:"5", breed:"Bulldog"},
-                dog={id:"3003", name:"Oscar",age:"1", breed:"Boxer"},
-                dog={id:"4004", name:"Jack",age:"8", breed:"Black Lab"}
-            ];
+// var dogs = [dog={id:"1001", name:"Toby",age:"2", breed:"Cockapoo"},
+//                 dog={id:"2002", gender:"Man", foster:"Homeless", name:"Meatball",age:"5", breed:"Bulldog"},
+//                 dog={id:"3003", name:"Oscar",age:"1", breed:"Boxer"},
+//                 dog={id:"4004", name:"Jack",age:"8", breed:"Black Lab"}
+//             ];
+//
+// var updatesData = [update={type:"Medical Update", date:"9/30/2017", desc:"Meatball was hungover from drinking"},
+//                             update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
+//                             update={type:"Medicine", date:"9/28/2017", desc:"Meatball was prescribed vodka"},
+//                             update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
+//                             update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
+//                             update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
+//                             update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
+//                             update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"}
+//             ];
+//
+// var dogdata={dog:dogs[1] ,updates:updatesData};
 
-var updatesData = [update={type:"Medical Update", date:"9/30/2017", desc:"Meatball was hungover from drinking"},
-                            update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
-                            update={type:"Medicine", date:"9/28/2017", desc:"Meatball was prescribed vodka"},
-                            update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
-                            update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
-                            update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
-                            update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"},
-                            update={type:"Injury Report", date:"9/29/2017", desc:"Meatball fell over from drinking"}
-            ];
-
-var dogdata={dog:dogs[1] ,updates:updatesData};
-
-=======
->>>>>>> 44691927950d4e98b2987733a22273c4ab222514
 
   //VIEW FOSTERS
   app.get('/viewfosters', function(req, res){
@@ -94,9 +91,29 @@ var dogdata={dog:dogs[1] ,updates:updatesData};
 
   //INDV DOG
   app.get('/dog/:dogID', function(req, res){
-    console.log(req.params.dogID);
-    res.render('dog', {data:dogdata});
-  });
+    var dogID = req.params.dogID;
+    var dogdata = {dog:{}, updates:[]};
+    connection.query('SELECT * FROM dog WHERE id =?',[dogID], function(err,data){
+      if(err){
+        throw err;
+      } else {
+        dogdata.dog = data;
+        console.log(dogdata);
+      }
+    });
+
+      if(dogdata.dog){
+        connection.query('SELECT * FROM dog_requests WHERE dogID =?',[dogID], function(err,data){
+          if(err){
+            throw err;
+          } else {
+            dogdata.updates = data;
+            console.log(dogdata);
+            res.render('dog',{data: dogdata});
+          }
+        });
+      }
+    });
 
   //INDV FOSTER
   app.get('/foster/:fosterID', function(req, res){
@@ -117,4 +134,4 @@ var dogdata={dog:dogs[1] ,updates:updatesData};
 };
 module.exports = {
   setRoutes: setRoutes
-}
+};

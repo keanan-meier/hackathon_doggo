@@ -3,7 +3,8 @@ $(document).ready(function(){
     $('#postUpdateModal').modal();
   });
 
-  $("#submitUpdate").click(function(e){
-    //ajax maybe
+
+  $("#postEdit").click(function(e){
+    $('#postEditModal').modal();
   });
 });

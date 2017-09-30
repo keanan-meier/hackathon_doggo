@@ -9,5 +9,5 @@ $(document).ready(function(){
     link.href = reqUrl;
     document.body.appendChild(link);
     link.click();
-  });
+  }); 
 });
