@@ -23,7 +23,6 @@ app.post('/addDirector', function(req,res){
   dc.directorController('create',req.body.director);
 });
 };
-
 module.exports = {
   setRoutes: setRoutes
 }

@@ -6,6 +6,7 @@ var createEntity = function(db,data) {
      "password": data.password
   }, function(err, result) {
     console.log(err);
+    
   });
 };
 
