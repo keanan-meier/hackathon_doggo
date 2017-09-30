@@ -48,7 +48,7 @@ var setRoutes = function(app){
       + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
         if(err) throw err;
       });
-      res.send();
+      res.redirect('/viewDogs');
     });
 };
 
