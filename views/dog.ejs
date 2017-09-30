@@ -11,6 +11,31 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="../js/dog.js"></script>
   <link rel="stylesheet" href="../css/main.css">
+  <script type="text/javascript">
+  $(document).ready(function(){
+    var dogIdString = window.location.pathname;
+      var dogIdPos = dogIdString.indexOf("dog/") + 4;
+      dogID = dogIdString.substring(dogIdPos,dogIdString.length);
+    $.ajax({
+                type: "POST",
+                url: "/editDoggo",
+                data: {
+                        id: dogID,
+                        name: name,
+                        breed: breed,
+                        age: age,
+                        gender: gender
+                 },
+                success: function(data) {
+                  this.location.reload(true);
+                },
+                error: function(jqXHR, textStatus, err) {
+                    alert('text status '+textStatus+', err '+err)
+                }
+            });
+  });
+
+  </script>
 </head>
 <body id="bckFix" style="background-color:#F5F5F5">
 
@@ -112,71 +137,70 @@
           <form id="dogUpdate" action="/postUpdate" method="post">
             <h2><center>Enter the fields below to post an update.</center></h2>
             <div class="form-group">
-              <label for="title">Title:</label>
-              <input type="text" class="form-control" id="title" name="title">
+              <label for="update[title]">Title:</label>
+              <input type="text" class="form-control" id="title" name="update[title]">
             </div>
             <div class="form-group">
-              <label for="date">Date:</label>
-              <input type="date" class="form-control" id="updateDate" name="date">
+              <label for="update[date]">Date:</label>
+              <input type="date" class="form-control" id="date" name="update[date]">
             </div>
             <div class="form-group">
-              <label for="desc">Description::</label>
-              <textarea class="form-control" id="desc" name="desc"></textarea>
+              <label for="update[desc]">Description::</label>
+              <textarea class="form-control" id="desc" name="update[desc]"></textarea>
             </div>
 
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" id="submitUpdate" class="btn btn-default toggleButtonActive logSubmit">Post Update</button>
+          <button type="submit" id="submitUpdate" class="btn btn-default toggleButtonActive logSubmit">Post Update</button>
         </div>
       </div>
 
     </div>
   </div>
 
-
-  <!-- Modal -->
-  <div class="modal fadeloginForm" id="postEditModal" role="dialog">
+  <!--add doggo modal-->
+  <div id="postEditModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Doggo</h4>
         </div>
-        <div class="modal-body">
-          <form action="/editDoggo" method="POST">
-                  <div class="form-group">
-                    <h2><center>Enter the fields below to edit this dog</center></h2>                    <div class="form-group">
-                      <label for="breed">Breed:</label>
-                      <input type="text" class="form-control" id="breed" name="breed">
+          <div class="modal-body">
+            <form action="/editDoggo" method="POST">
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" class="form-control" id="name" name="name">
                     </div>
-                  <div class="form-group">
-                    <div class="col-2">
-                    <label for="age">Age:</label>
-                    <input type="number" class="form-control" id="age" name="age">
-                  </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="gender">Gender:</label><br/>
-                    <input type="radio" name="gender" value="male"> Male<br>
-                    <input type="radio" name="gender" value="female"> Female<br>
-                  </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-            <button type="submit" id="submitEdit" class="btn btn-default toggleButtonActive logSubmit">Submit Edit</button>
+                      <div class="form-group">
+                        <label for="breed">Breed:</label>
+                        <input type="text" class="form-control" id="breed" name="breed">
+                      </div>
+                    <div class="form-group">
+                      <div class="col-2">
+                      <label for="age">Age:</label>
+                      <input type="number" class="form-control" id="age" name="age">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="gender">Gender:</label><br/>
+                      <input type="radio" name="gender" value="male"> Male<br/>
+                      <input type="radio" name="gender" value="female"> Female<br/>
+                    </div>
+                    <button type="submit" id="submitEdit" class="btn btn-default toggleButtonActive logSubmit">Submit Edit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+
         </div>
       </div>
-
     </div>
-  </div>
-
+</div>
 
   <div class="footer">
 
   </div>
-
 </body>
 </html>
