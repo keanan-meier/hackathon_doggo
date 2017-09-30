@@ -1,5 +1,6 @@
 var directorService = require("./directorService");
 var dbUtil = require('./../../Utils/dbTools');
+
 var directorController = function(operation, data){
   var db = dbUtil.getDb();
   //perform operation
