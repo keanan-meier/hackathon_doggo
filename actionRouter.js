@@ -55,14 +55,23 @@ var setRoutes = function(app){
     //new dog
     var newUpdate = {
 <<<<<<< HEAD
+<<<<<<< HEAD
       recordType: req.body.body.title,
       date: req.body.body.date,
       updateDesc: req.body.body.desc,
       dogID: req.body.body.dogID
+=======
+      name: req.body.name,
+      breed: req.body.breed,
+      age: req.body.age,
+      gender: req.body.gender
+>>>>>>> parent of cf916e5... working update
     };
-    connection.query("INSERT INTO dog_requests (`recordType`,`date`,`updateDesc`,`dogID`) VALUES (?,?,?,?);",[newUpdate.recordType, newUpdate.date, newUpdate.updateDesc,newUpdate.dogID],function(err,result){
+    connection.query("INSERT INTO dog (`name`,`breed`,`age`,`gender`) VALUES ('" + newDog.name + "', '"
+    + newDog.breed + "', " + newDog.age + ",'" + newDog.gender + "');",function(err,result){
       if(err) throw err;
     });
+<<<<<<< HEAD
     res.redirect('/dog/'+newUpdate.dogID);
 =======
       name: req.body.name,
@@ -76,6 +85,9 @@ var setRoutes = function(app){
     });
     res.redirect('/viewDogs');
 >>>>>>> parent of a762957... too bad here comes the update down the shit pipe
+=======
+    res.redirect('/viewDogs');
+>>>>>>> parent of cf916e5... working update
   });
 };
 
