@@ -37,8 +37,15 @@ html #bckFix{
 .tile:hover{
   background-color: #CFD8DC;
 }
+.tile img{
+  display: inline-block;
+}
 .name{
   font-weight: bold;
+}
+.dogPanel .name{
+  margin-left: 20%;
+  margin-top: -10%;
 }
 .phone{
   position: absolute;
@@ -103,4 +110,21 @@ html #bckFix{
 .toggleButtonInactive:hover{
   background-color: #424242;
   color: white;
+}
+
+.addButton{
+  margin-top: -85px;
+}
+
+@media screen and (max-width: 992px){
+  .addButton{
+    margin-top: -5px;
+    width: 100%;
+  }
+  .toggleButtonActive{
+    margin-top: 10px;
+  }
+  .toggleButtonInactive{
+    margin-top: 10px;
+  }
 }
